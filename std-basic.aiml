@@ -1,34 +1,582 @@
-<aiml version="1.0.1" encoding="UTF-8">
-<!-- basic_chat.aiml -->
+<aiml version="2.0.0" encoding="UTF-8">
+  
+    <!--Step START Hỏi tư vấn -->  
+    <category>
+    <pattern>XIN CHÀO</pattern>
+    <template>
+       Xin chào 
+       <delay> 1 </delay>
+       <split/>
+        Tôi là chatbot pika 
+        <delay> 1 </delay>
+        <split/>
+        Tôi có thể giúp gì được cho bạn
+    </template>
+    </category>
+    
+    <category>
+    <pattern>_ XIN CHÀO *</pattern>
+    <template>
+       Xin chào 
+       <delay> 1 </delay>
+       <split/>
+        Tôi là chatbot pika 
+        <delay> 1 </delay>
+        <split/>
+        Tôi có thể giúp gì được cho bạn
+    </template>
+    </category>
+    
+    <category>
+    <pattern>XIN CHÀO _</pattern>
+    <template>
+       Xin chào 
+       <delay> 1 </delay>
+       <split/>
+        Tôi là chatbot pika 
+        <delay> 1 </delay>
+        <split/>
+        Tôi có thể giúp gì được cho bạn
+    </template>
+    </category>
+    
+     <category>
+    <pattern>_ XIN CHÀO</pattern>
+    <template>
+       Xin chào 
+       <delay> 1 </delay>
+       <split/>
+        Tôi là chatbot pika 
+        <delay> 1 </delay>
+        <split/>
+        Tôi có thể giúp gì được cho bạn
+    </template>
+    </category>
+    
+     <category>
+         <pattern> BẮT ĐẦU </pattern>
+          <template> <srai> XIN CHÀO </srai>  </template>
+     </category>
+     
+    <category>
+         <pattern>_ BẮT ĐẦU *</pattern>
+          <template> <srai> XIN CHÀO </srai>  </template>
+     </category>
+     
+    <category>
+         <pattern>_ BẮT ĐẦU</pattern>
+          <template> <srai> XIN CHÀO </srai>  </template>
+     </category>
+     
+         <category>
+         <pattern>BẮT ĐẦU _</pattern>
+          <template> <srai> XIN CHÀO </srai>  </template>
+     </category>
 
+      
+     <!-- Step 1 Tên khách hàng --> 
+    
+     <category>
+         <pattern> TÔI TÊN LÀ * </pattern>
+          <template>Xin chào <set name = "username"> <star/></set>  </template>
+      </category>
     <category>
-        <pattern>HELLO *</pattern>
-        <template>
-            <random>
-            <li>HELLO SIR</li> 
-            <li>How ARE YOU?</li>
-            <li>Be more specific.</li>
-            <li>I did not know that.</li>
-            <li>Are you telling the truth?</li>
-            <li>I don't know what that means.</li>
-            <li>Try to tell me that another way.</li>
-            <li>Are you talking about an animal, vegetable or mineral?</li>
-            <li>What is it?</li>
-        </random>
+         <pattern> TÔI TÊN * </pattern>
+          <template>Xin chào <set name = "username"><star/> </set>  </template>
+          
+      </category>
+      
+     <!--Step 2 Khách cần tư vấn --> 
+     
+     <category> 
+     <pattern> _ TƯ VẤN * </pattern>
+      <template>  
+        Chào bạn, hiện tại cửa hàng tôi cung cấp các sản phẩm gaming gear va laptop
+       <delay> 1</delay>
+       <split/>
+        Không biết bạn muốn chọn loại nào 
+    </template>
+    </category>  
+
+    <category> 
+    <pattern> _ TƯ VẤN </pattern>
+      <template>  
+        Chào bạn, hiện tại cửa hàng tôi cung cấp các sản phẩm gaming gear va laptop
+       <delay> 1</delay>
+       <split/>
+        Không biết bạn muốn chọn loại nào 
+    </template>
+    </category> 
+              
+    <category> 
+    <pattern>TƯ VẤN _</pattern>
+      <template>  
+        Chào bạn, hiện tại cửa hàng tôi cung cấp các sản phẩm gaming gear va laptop
+       <delay> 1</delay>
+       <split/>
+        Không biết bạn muốn chọn loại nào 
+    </template>
+    </category> 
+      
+       <category> 
+    <pattern>TƯ VẤN</pattern>
+      <template>  
+        Chào bạn, hiện tại cửa hàng tôi cung cấp các sản phẩm gaming gear va laptop
+       <delay> 1</delay>
+       <split/>
+        Không biết bạn muốn chọn loại nào 
+    </template>
+    </category>
+     <!--Step 3 khác hàng tư vấn về sản phẩm gaming gear-->
+
+     <!--  Step 3.1 Phản hồi tư cho khách hàng cho về gaming gear -->
+          <category> 
+         <pattern>_ GAMING GEAR</pattern>
+          <template>  
+            Hiện tại cửa hàng chúng tôi có các mặt hàng gaming gear:
+           <delay> 1</delay>
+           <split/>
+            Chuột, bàn phím, tai nghe
+            <delay> 1 </delay>
+            <split/>
+            Không biết muốn chon loại nào
         </template>
+        </category>
+    
+        <category> 
+         <pattern>_ GAMING GEAR *</pattern>
+          <template>  
+            Hiện tại cửa hàng chúng tôi có các mặt hàng gaming gear:
+           <delay> 1</delay>
+           <split/>
+            Chuột, bàn phím, tai nghe
+            <delay> 1 </delay>
+            <split/>
+            Không biết muốn chon loại nào
+        </template>
+        </category> 
+    
+          <category> 
+         <pattern>GAMING GEAR _</pattern>
+          <template>  
+            Hiện tại cửa hàng chúng tôi có các mặt hàng gaming gear:
+           <delay> 1</delay>
+           <split/>
+            Chuột, bàn phím, tai nghe
+            <delay> 1 </delay>
+            <split/>
+            Không biết muốn chon loại nào
+        </template>
+        </category> 
+        
+        <category> 
+         <pattern>GAMING GEAR</pattern>
+          <template>  
+            Hiện tại cửa hàng chúng tôi có các mặt hàng gaming gear:
+           <delay> 1</delay>
+           <split/>
+            Chuột, bàn phím, tai nghe
+            <delay> 1 </delay>
+            <split/>
+            Không biết muốn chon loại nào
+        </template>
+        </category>
+        <!--  Step 3.2 Phản hồi tư cho khách hàng cho về latop -->
+          <category> 
+         <pattern>LAPTOP _</pattern>
+          <template>  
+            Hiện tại cửa hàng chúng tôi có các mẫu laptop
+           <delay> 1</delay>
+           <split/>
+            Laptop văn phòng, laptop gaming, laptop đồ họa
+            <delay> 1 </delay>
+            <split/>
+            Không biết muốn chon loại nào
+        </template>
+        </category>  
+        
+        <category> 
+         <pattern>_ LAPTOP</pattern>
+          <template>  
+            Hiện tại cửa hàng chúng tôi có các mẫu laptop
+           <delay> 1</delay>
+           <split/>
+            Laptop văn phòng, laptop gaming, laptop đồ họa
+            <delay> 1 </delay>
+            <split/>
+            Không biết muốn chon loại nào
+        </template>
+        </category>  
+
+          <category> 
+         <pattern>_ LAPTOP *</pattern>
+          <template>  
+            Hiện tại cửa hàng chúng tôi có các mẫu laptop
+           <delay> 1</delay>
+           <split/>
+            Laptop văn phòng, laptop gaming, laptop đồ họa
+            <delay> 1 </delay>
+            <split/>
+            Không biết muốn chon loại nào
+        </template>
+        </category> 
+        
+     
+    <!--Step 4.1 Khách hàng hỏi về chủ đề bàn phím  -->
+   <category> 
+    <pattern>_ BÀN PHÍM </pattern>
+    <template> chúng tôi có rất nhiều hãng
+    <delay> 1 </delay>
+     <split/>
+     Akko, logetich, razer, corsair, SteelSeries 
+     <delay> 1 </delay>
+     <split/>
+     Bạn muốn lấy xem hãng bàn phím nào ?
+    </template>
+    </category> 
+    
+    <category> 
+    <pattern>_ BÀN PHÍM *</pattern>
+    <template> chúng tôi có rất nhiều hãng
+    <delay> 1 </delay>
+     <split/>
+     Akko, logetich, razer, corsair, SteelSeries
+     <delay> 1 </delay>
+     <split/>
+     Bạn muốn lấy xem hãng bàn phím nào ?
+    </template>
+    </category> 
+
+    <category> 
+    <pattern>BÀN PHÍM _</pattern>
+    <template> chúng tôi có rất nhiều hãng
+    <delay> 1 </delay>
+     <split/>
+     Akko, logetich, razer, corsair, SteelSeries 
+     <delay> 1 </delay>
+     <split/>
+     Bạn muốn lấy xem hãng bàn phím nào ?
+    </template>
+    </category> 
+    
+    <category> 
+    <pattern>BÀN PHÍM </pattern>
+    <template> chúng tôi có rất nhiều hãng
+    <delay> 1 </delay>
+     <split/>
+     Akko, logetich, razer, corsair, SteelSeries 
+      <delay> 1 </delay>
+     <split/>
+     Bạn muốn lấy xem hãng bàn phím nào ?
+    </template>
+    </category>
+                 
+             
+    <!--Step 4.1.1 Giá bàn phím theo hãng asus -->
+
+        <category> 
+         <pattern>_ GIÁ BÀN PHÍM ASUS *</pattern>
+        <template> 
+        1. Bàn phím cơ Asus Rog Strix Scope; Gái 3.400.00 VNĐ
+        <split/>
+        <delay> 1 </delay>
+        2. Bàn phím cơ không dây Asus Rog Falchion; Giá 2.990.000 VNĐ
+        <split/>
+        <delay> 1 </delay>
+        3. Bàn phím cơ ASUS Strix Flare PNK Ltd; Giá 1.890.000 VNĐ
+        <split/>
+        <delay> 1 </delay>
+        4. Bàn phím gaming Asus TUF K1; Giá 4.900.00 VNĐ
+        <split/>
+        <delay> 1 </delay>
+        Bạn muốn tham khảo loại nào sản phẩm nào ? 
+        </template>
+        </category>
+        
+        <category> 
+        <pattern>_ GIÁ BÀN PHÍM ASUS</pattern>
+        <template> 
+        1. Bàn phím cơ Asus Rog Strix Scope; Gái 3.400.00 VNĐ
+        <split/>
+        <delay> 1 </delay>
+        2. Bàn phím cơ không dây Asus Rog Falchion; Giá 2.990.000 VNĐ
+        <split/>
+        <delay> 1 </delay>
+        3. Bàn phím cơ ASUS Strix Flare PNK Ltd; Giá 1.890.000 VNĐ
+        <split/>
+        <delay> 1 </delay>
+        4. Bàn phím gaming Asus TUF K1; Giá 4.900.00 VNĐ
+        <split/>
+        <delay> 1 </delay>
+        Bạn muốn tham khảo loại nào sản phẩm nào ? 
+        </template>
+        </category>
+        
+        
+        
+    <!--Step 4.1 Khách hàng muốn mua loại chơi gaming-->
+    
+    <category> 
+    <pattern>_ CHƠI GAME </pattern>
+      <template>
+         <random>
+            <!--Random 1-->
+            <li> Bạn có thể tham khảo bàn phím cơ Asus Rog Strix Scope
+             <delay> 1 </delay>
+             <split/>
+            Nó khá phụ hợp cho phù hợp cho việc chơi game ban đêm và không tạo tiếng ồn :vv  
+             <delay> 1 </delay>
+             <split/>
+             Ngoài ra cũng có thêm loại bàn phím gaming Asus TUF K1
+             <delay> 1 </delay>
+             <split/>
+             Cảm giác khá ồn ào từ blue switch
+             <delay> 1 </delay>
+             <split/>
+             Hạn chế sử dụng trong phòng đóng kín !!
+            </li>
+        
+           <!--Random 2 -->
+            <li> Bạn có thể tham khảo qua mẫu bàn phím gaming Asus TUF K1
+              <delay> 1 </delay>
+             <split/>
+             Cảm giác khá ồn ào từ blue switch
+             <delay> 1 </delay>
+             <split/>
+             Hạn chế sử dụng trong phòng đóng kín !!
+             
+            <delay> 1 </delay>
+             <split/>
+             Ngoài ra cũng có thêm loại bàn phím cơ Asus Rog Strix Scope
+             <delay> 1 </delay>
+             <split/>
+            Nó khá phụ hợp cho phù hợp cho việc chơi game ban đêm và không tạo tiếng ồn :vv 
+            </li>
+         </random>
+      </template>
     </category>
     
-    <category>
-        <pattern>WHO ARE YOU</pattern>
-        <template>
-            I'm a bot, silly!
-        </template>
+    
+    <category> 
+    <pattern>_ CHƠI GAME *</pattern>
+      <template>
+         <random>
+             <!--Random 1-->
+            <li> Bạn có thể tham khảo bàn phím cơ Asus Rog Strix Scope
+             <delay> 1 </delay>
+             <split/>
+            Nó khá phụ hợp cho phù hợp cho việc chơi game ban đêm và không tạo tiếng ồn :vv  
+             <delay> 1 </delay>
+             <split/>
+             Ngoài ra cũng có thêm loại bàn phím gaming Asus TUF K1
+             <delay> 1 </delay>
+             <split/>
+             Cảm giác khá ồn ào từ blue switch
+             <delay> 1 </delay>
+             <split/>
+             Hạn chế sử dụng trong phòng đóng kín !!
+            </li>
+        
+           <!--Random 2 -->
+            <li> Bạn có thể tham khảo qua mẫu bàn phím gaming Asus TUF K1
+              <delay> 1 </delay>
+             <split/>
+             Cảm giác khá ồn ào từ blue switch
+             <delay> 1 </delay>
+             <split/>
+             Hạn chế sử dụng trong phòng đóng kín !!
+             
+            <delay> 1 </delay>
+             <split/>
+             Ngoài ra cũng có thêm loại bàn phím cơ Asus Rog Strix Scope
+             <delay> 1 </delay>
+             <split/>
+            Nó khá phụ hợp cho phù hợp cho việc chơi game ban đêm và không tạo tiếng ồn :vv 
+            </li>
+         </random>
+      </template>
     </category>
     
-    <category>
-        <pattern>XIN CHÀO BRO</pattern>
-        <template>
-            OK CHÀO
-        </template>
+    <category> 
+    <pattern>CHƠI GAME _</pattern>
+      <template>
+         <random>
+             <!--Random 1-->
+            <li> Bạn có thể tham khảo bàn phím cơ Asus Rog Strix Scope
+             <delay> 1 </delay>
+             <split/>
+            Nó khá phụ hợp cho phù hợp cho việc chơi game ban đêm và không tạo tiếng ồn :vv  
+             <delay> 1 </delay>
+             <split/>
+             Ngoài ra cũng có thêm loại bàn phím gaming Asus TUF K1
+             <delay> 1 </delay>
+             <split/>
+             Cảm giác khá ồn ào từ blue switch
+             <delay> 1 </delay>
+             <split/>
+             Hạn chế sử dụng trong phòng đóng kín !!
+            </li>
+        
+           <!--Random 2 -->
+            <li> Bạn có thể tham khảo qua mẫu bàn phím gaming Asus TUF K1
+              <delay> 1 </delay>
+             <split/>
+             Cảm giác khá ồn ào từ blue switch
+             <delay> 1 </delay>
+             <split/>
+             Hạn chế sử dụng trong phòng đóng kín !!
+             
+            <delay> 1 </delay>
+             <split/>
+             Ngoài ra cũng có thêm loại bàn phím cơ Asus Rog Strix Scope
+             <delay> 1 </delay>
+             <split/>
+            Nó khá phụ hợp cho phù hợp cho việc chơi game ban đêm và không tạo tiếng ồn :vv 
+            </li>
+         </random>
+      </template>
     </category>
+    
+    
+    <!--Step 6.1 Hỏi Bot hãng bàn phím yêu thích -->
+    
+    <category>
+      <pattern>_ THÍCH HÃNG *</pattern>
+      <template>
+            <random >
+                <li>Tôi chỉ thích loại bàn phím asus nó khá thích hợp giá cả cũng phải chăng :3 </li>
+                 <li>Tôi chỉ thích loại bàn phím akko nó khá thích hợp giá cả cũng phải chăng :3 </li>
+            </random>
+      </template>
+   </category>
+   
+     
+     <!--Step 7.1 Bot thu tập thông tin từ khách hàng -->
+       <category>
+      <pattern>_ THANH TOÁN</pattern>
+      <template>
+             Bạn vui lòng cung cấp thông tin của mình cho Bot !
+             <delay> 1 </delay>
+            <split/>
+            Theo mẫu sau: Tôi tên là " " và " số điện thoại "
+       </template>
+       </category> 
+    
+       <category>
+      <pattern>_ THANH TOÁN *</pattern>
+      <template>
+            Bạn vui lòng cung cấp thông tin của mình cho Bot !
+             <delay> 1 </delay>
+            <split/>
+            Theo mẫu sau: Tôi tên là " " và " số điện thoại "
+      </template>
+      </category> 
+      
+      <category>
+      <pattern>THANH TOÁN _</pattern>
+      <template>
+            Bạn vui lòng cung cấp thông tin của mình cho Bot !
+             <delay> 1 </delay>
+            <split/>
+            Theo mẫu sau: Tôi tên là " " và " số điện thoại "
+      </template>
+      </category> 
+      
+       <category>
+      <pattern>THANH TOÁN</pattern>
+      <template>
+            Bạn vui lòng cung cấp thông tin của mình cho Bot !
+             <delay> 1 </delay>
+            <split/>
+            Theo mẫu sau: Tôi tên là " " và " số điện thoại "
+      </template>
+      </category> 
+      
+      <!--Step 8.1 Khách hàng cung cấp thông tin -->
+            
+     <category>
+      <pattern>TÔI TÊN LÀ * * VÀ * </pattern>
+      <template>
+         Thông tin khách hàng:
+          <delay> 1 </delay>
+         <split/>
+         Tên khách hàng: <set name = "CusName">  <star index="1"/> </set>   <set name = "CusName2">
+               <star index="2"/> </set> 
+         <delay> 1 </delay>
+         <split/>
+         SĐT: <set name = "phone">  <star index="3"/> </set>
+         <delay> 1 </delay>
+         <split/>
+         Bot đã lưu lại thông tin của bạn
+           <delay> 1 </delay>
+         <split/>
+         Nhân viên tư vấn sẽ liên lạc với về vấn đề thanh toán sắp tới 
+          <delay> 1 </delay>
+         <split/>
+        Chúc <get name = "CusName2"/>  ngày tốt lành ! 
+      </template>
+        </category> 
+        
+        
+   <!-- Step END Người dùng tạm chatbot -->    
+   
+      <category>
+      <pattern>_ Tạm biệt *</pattern>
+      <template>
+        Tạm biệt <get name = "CusName2"/> !
+         <delay> 1 </delay>
+         <split/>
+        <date timezone="-5" format="%I:%M%p"/> <date format="%B %d, %Y" />
+      </template>
+     </category> 
+     
+      <category>
+      <pattern>Tạm biệt _</pattern>
+      <template>
+        Tạm biệt <get name = "CusName2"/> !
+         <delay> 1 </delay>
+         <split/>
+        <date timezone="-5" format="%I:%M%p"/> <date format="%B %d, %Y" />
+      </template>
+     </category> 
+     
+      <category>
+      <pattern>_Tạm biệt</pattern>
+      <template>
+        Tạm biệt <get name = "CusName2"/> !
+         <delay> 1 </delay>
+         <split/>
+        <date timezone="-5" format="%I:%M%p"/> <date format="%B %d, %Y" />
+      </template>
+     </category> 
+     
+      <category>
+      <pattern>Tạm biệt</pattern>
+      <template>
+        Tạm biệt <get name = "CusName2"/> !
+         <delay> 1 </delay>
+         <split/>
+        <date timezone="-5" format="%I:%M%p"/> <date format="%B %d, %Y" />
+      </template>
+     </category> 
+   
+   
+   
+  <!-- Step X * Ngoài lĩnh vực của chatbot-->
+       <category>
+      <pattern>*</pattern>
+      <template>
+         Xin lỗi có nhiều tính năng mà chatbot chưa học hỏi hết !
+          <delay> 1 </delay>
+         <split/>
+         Các bạn nhập phản hồi khác trong lịch vực mua bán phẩm của cửa hàng 
+          <delay> 1 </delay>
+         <split/>
+         Lĩnh vực bot có thể tư vấn : gaming gear (Bàn phím asus, giá bàn phím asus );
+         laptop; thanh toán; lấy thông tin khách hàng; tạm biệt; bot thích hãng bàn phím nào....
+      </template>
+      </category> 
+        
+        
+
 </aiml>
