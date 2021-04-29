@@ -7,6 +7,7 @@
        Xin chào 
        <delay> 1 </delay>
        <split/>
+       
         Tôi là chatbot pika 
         <delay> 1 </delay>
         <split/>
@@ -228,7 +229,7 @@
     <template> chúng tôi có rất nhiều hãng
     <delay> 1 </delay>
      <split/>
-     Akko, logetich, razer, corsair, SteelSeries 
+        Akko, logetich, razer, corsair, SteelSeries, Asus
      <delay> 1 </delay>
      <split/>
      Bạn muốn lấy xem hãng bàn phím nào ?
@@ -240,7 +241,7 @@
     <template> chúng tôi có rất nhiều hãng
     <delay> 1 </delay>
      <split/>
-     Akko, logetich, razer, corsair, SteelSeries
+       Akko, logetich, razer, corsair, SteelSeries, Asus
      <delay> 1 </delay>
      <split/>
      Bạn muốn lấy xem hãng bàn phím nào ?
@@ -252,7 +253,7 @@
     <template> chúng tôi có rất nhiều hãng
     <delay> 1 </delay>
      <split/>
-     Akko, logetich, razer, corsair, SteelSeries 
+     Akko, logetich, razer, corsair, SteelSeries, Asus
      <delay> 1 </delay>
      <split/>
      Bạn muốn lấy xem hãng bàn phím nào ?
@@ -264,7 +265,7 @@
     <template> chúng tôi có rất nhiều hãng
     <delay> 1 </delay>
      <split/>
-     Akko, logetich, razer, corsair, SteelSeries 
+        Akko, logetich, razer, corsair, SteelSeries, Asus
       <delay> 1 </delay>
      <split/>
      Bạn muốn lấy xem hãng bàn phím nào ?
@@ -272,10 +273,10 @@
     </category>
                  
              
-    <!--Step 4.1.1 Giá bàn phím theo hãng asus -->
+    <!--Step 4.1.1  bàn phím theo hãng asus -->
 
         <category> 
-         <pattern>_ GIÁ BÀN PHÍM ASUS *</pattern>
+         <pattern>_ HÃNG BÀN PHÍM ASUS *</pattern>
         <template> 
         1. Bàn phím cơ Asus Rog Strix Scope; Gái 3.400.00 VNĐ
         <split/>
@@ -294,7 +295,7 @@
         </category>
         
         <category> 
-        <pattern>_ GIÁ BÀN PHÍM ASUS</pattern>
+        <pattern>_ HÃNG BÀN PHÍM ASUS</pattern>
         <template> 
         1. Bàn phím cơ Asus Rog Strix Scope; Gái 3.400.00 VNĐ
         <split/>
@@ -459,6 +460,9 @@
              <delay> 1 </delay>
             <split/>
             Theo mẫu sau: Tôi tên là " " và " số điện thoại "
+               <delay> 1 </delay>
+            <split/>
+            ví dụ (Tôi tên là viết bảo và 092192192)
        </template>
        </category> 
     
@@ -469,6 +473,9 @@
              <delay> 1 </delay>
             <split/>
             Theo mẫu sau: Tôi tên là " " và " số điện thoại "
+               <delay> 1 </delay>
+            <split/>
+            ví dụ (Tôi tên là viết bảo và 092192192)
       </template>
       </category> 
       
@@ -479,6 +486,9 @@
              <delay> 1 </delay>
             <split/>
             Theo mẫu sau: Tôi tên là " " và " số điện thoại "
+               <delay> 1 </delay>
+            <split/>
+            ví dụ (Tôi tên là viết bảo và 092192192)
       </template>
       </category> 
       
@@ -488,32 +498,20 @@
             Bạn vui lòng cung cấp thông tin của mình cho Bot !
              <delay> 1 </delay>
             <split/>
-            Theo mẫu sau: Tôi tên là " " và " số điện thoại "
+            Theo mẫu sau: Tôi tên là " " và " số điện thoại " 
+             <delay> 1 </delay>
+            <split/>
+            ví dụ (Tôi tên là viết bảo và 092192192)
       </template>
       </category> 
       
       <!--Step 8.1 Khách hàng cung cấp thông tin -->
             
      <category>
-      <pattern>TÔI TÊN LÀ * * VÀ * </pattern>
+      <pattern>TÔI TÊN LÀ * VÀ *</pattern>
       <template>
-         Thông tin khách hàng:
-          <delay> 1 </delay>
-         <split/>
-         Tên khách hàng: <set name = "CusName">  <star index="1"/> </set>   <set name = "CusName2">
-               <star index="2"/> </set> 
-         <delay> 1 </delay>
-         <split/>
-         SĐT: <set name = "phone">  <star index="3"/> </set>
-         <delay> 1 </delay>
-         <split/>
-         Bot đã lưu lại thông tin của bạn
-           <delay> 1 </delay>
-         <split/>
-         Nhân viên tư vấn sẽ liên lạc với về vấn đề thanh toán sắp tới 
-          <delay> 1 </delay>
-         <split/>
-        Chúc <get name = "CusName2"/>  ngày tốt lành ! 
+         Thông tin khách hàng: 
+         Tên khách hàng: <star index="1"/> và Phone: <star index="2"/>
       </template>
         </category> 
         
@@ -521,42 +519,30 @@
    <!-- Step END Người dùng tạm chatbot -->    
    
       <category>
-      <pattern>_ Tạm biệt *</pattern>
+      <pattern>_ TẠM BIỆT *</pattern>
       <template>
-        Tạm biệt <get name = "CusName2"/> !
-         <delay> 1 </delay>
-         <split/>
-        <date timezone="-5" format="%I:%M%p"/> <date format="%B %d, %Y" />
+        Chào tạm biệt <get name = "username"/>  , chúc <get name = "username"/>  một ngày tốt lành !
       </template>
      </category> 
      
       <category>
-      <pattern>Tạm biệt _</pattern>
+      <pattern>TẠM BIỆT _</pattern>
       <template>
-        Tạm biệt <get name = "CusName2"/> !
-         <delay> 1 </delay>
-         <split/>
-        <date timezone="-5" format="%I:%M%p"/> <date format="%B %d, %Y" />
+               Chào tạm biệt <get name = "username"/>  , chúc <get name = "username"/>  một ngày tốt lành !
       </template>
      </category> 
      
       <category>
-      <pattern>_Tạm biệt</pattern>
+      <pattern>_ TẠM BIỆT</pattern>
       <template>
-        Tạm biệt <get name = "CusName2"/> !
-         <delay> 1 </delay>
-         <split/>
-        <date timezone="-5" format="%I:%M%p"/> <date format="%B %d, %Y" />
+             Chào tạm biệt <get name = "username"/>  , chúc <get name = "username"/>  một ngày tốt lành !
       </template>
      </category> 
      
       <category>
-      <pattern>Tạm biệt</pattern>
+      <pattern>TẠM BIỆT</pattern>
       <template>
-        Tạm biệt <get name = "CusName2"/> !
-         <delay> 1 </delay>
-         <split/>
-        <date timezone="-5" format="%I:%M%p"/> <date format="%B %d, %Y" />
+                Chào tạm biệt <get name = "username"/>  , chúc <get name = "username"/>  một ngày tốt lành !
       </template>
      </category> 
    
@@ -577,6 +563,9 @@
       </template>
       </category> 
         
-        
+
+
+
+  
 
 </aiml>
